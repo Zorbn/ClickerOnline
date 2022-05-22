@@ -13,7 +13,7 @@ routes_bp = Blueprint("routes", __name__, template_folder="templates")
 
 @routes_bp.route("/")
 def home():
-    top_stats = db.session.query(Stats).order_by(Stats.prestiges)
+    top_stats = db.session.query(Stats).order_by(Stats.prestiges.desc())
     top_count = top_stats.count()
     high_scores = []
 
