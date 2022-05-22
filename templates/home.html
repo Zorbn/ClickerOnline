@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/home.css')}}">
+{% endblock %}
+{% block content %}
+<div class="center-container-item">
+    <h1>Clicker Online</h1><br>
+    Welcome to Clicker Online! Can you reach $1B and prestige?<br><br>
+    {% if current_user.is_authenticated %}
+        <a href="{{url_for('routes.dashboard')}}">🎰 Hi, {{ current_user.username }}, resume?</a>
+    {% else %}
+        <a href="{{url_for('routes.login')}}">🔑 Login</a>
+        <a href="{{url_for('routes.register')}}">🔓 Register</a>
+    {% endif %}
+    <br><br>
+    <div class="leaderboard-header">
+        <h2>Top players</h2>
+        <h2 class="prestige-label">Prestiges</h2>
+    </div>
+    <br>
+    <table>
+        {% for player in high_scores %}
+            <tr>
+                <td>{{ player["username"] }}</td>
+                <td>{{ player["prestiges"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

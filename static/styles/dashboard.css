@@ -1,0 +1,82 @@
+.card-grid {
+    display: grid;
+    gap: 2rem;
+    background-color: var(--dark);
+}
+
+.card-grid-outline {
+    padding: 0.5rem;
+    border-radius: 2.4rem;
+    background: linear-gradient(var(--accent-dark), var(--accent-light));
+}
+
+.header-card {
+    display: grid;
+    gap: 1rem;
+}
+
+.header-content {
+    padding: 0.25rem;
+}
+
+.footer-card {
+    display: flex;
+    padding: 1rem;
+}
+
+.footer-link {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.footer-right {
+    margin-left: auto;
+    text-align: right;
+}
+
+.messageBox {
+    margin: 0rem;
+    font-family: var(--mono-fonts);
+    color: var(--accent-light);
+}
+
+.header-right {
+    padding: 0.25rem;
+    background-color: var(--dark);
+}
+
+.money-button {
+    margin: auto;
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+.money-card {
+    display: flex;
+}
+
+.money-span {
+    font-family: var(--mono-fonts);
+}
+
+.prestige-button {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+/* For large screens only */
+@media (min-width: 50em) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.25fr repeat(2, 1fr);
+    }
+
+    .header-card {
+        grid-column: span 2;
+        grid-template-columns: 0.45fr 0.6fr;
+    }
+
+    .footer-card {
+        grid-column: span 2;
+    }
+}

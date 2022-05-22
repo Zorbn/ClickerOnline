@@ -1,0 +1,5 @@
+<h2>{{ title }} (<span id={{ name }}-count>?</span>)</h2><br>
+{{ description }}<br>
+Cost: $<span id="{{ name }}-cost">?</span><br>
+Profit: $<span id="{{ name }}-value">?</span> / <span id="{{ name }}-delay">?</span>s<br>
+<button type="button" onclick="requestBuyProducer('{{ name }}')">Buy a {{ emoji }}</button><br>

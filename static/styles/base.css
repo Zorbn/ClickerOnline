@@ -1,0 +1,63 @@
+:root {
+    --light: #f8f8f2;
+    --medium: #44475a;
+    --dark: #282a36;
+    --accent-light: #50fa7b;
+    --accent-dark: #bd93f9;
+    --fonts: Source Sans Pro, sans-serif;
+    --mono-fonts: Source Code Pro, monospace;
+    font-family: var(--fonts);
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+div {
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: var(--medium);
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0rem;
+    color: var(--accent-dark);
+}
+
+a {
+    color: var(--accent-light);
+    padding: 0rem 1rem 0rem 0rem;
+}
+
+button, input {
+    font-family: var(--fonts);
+    margin: 1rem 0.5rem 1rem 0rem;
+    background-color: var(--accent-dark);
+    color: var(--light);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+::placeholder {
+    color: var(--medium);
+    opacity: 1; /* Firefox */
+}
+
+.center-container {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    background-color: var(--dark);
+}
+
+.center-container-item {
+    margin: auto;
+}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/dashboard.css')}}">
+{% endblock %}
+{% block content %}
+<div class="card-grid-outline center-container-item"><div class="card-grid">
+    <div class="header-card">
+        <div class="header-left header-content">
+            <h1>Clicker Online</h1><br>
+            You have $<span id="total" class="money-span">?</span>.
+        </div>
+        <div class="header-right header-content">
+            <p class="messageBox" id="messageBox"></p>
+        </div>
+    </div>
+    <div class="money-card">
+        <button type="button" id="request_money" class="money-button" onclick="requestMoney()">❱💰❰</button><br>
+    </div>
+    <div>
+        {% with title="Banks", description="Banks make money for you!", name="bank", emoji="🏦" %}
+            {% include "producer_card.html" %}
+        {% endwith %}
+    </div>
+    <div>
+        {% with title="Hotels", description="Hotels make even more money!", name="hotel", emoji="🏨" %}
+            {% include "producer_card.html" %}
+        {% endwith %}
+    </div>
+    <div>
+        {% with title="Casinos", description="Casinos make too much money!", name="casino", emoji="🎰" %}
+            {% include "producer_card.html" %}
+        {% endwith %}
+    </div>
+    <div class="footer-card">
+        <a class="footer-link" href="{{url_for('routes.home')}}">🏠 Home</a>
+        <a class="footer-link" href="{{url_for('routes.logout')}}">🔒 Logout of {{ current_user.username }}</a>
+        <span id="prestige" class="footer-right"></span>
+    </div>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='scripts/dashboard.js')}}"></script>
+{% endblock %}

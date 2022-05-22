@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+}
+
+tr {
+    background-color: var(--dark);
+}
+
+tr:nth-child(even) {
+    background-color: var(--medium);
+}
+
+td {
+    color: var(--light);
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    border-radius: 2rem;
+    border-width: 0.2rem;
+    border-color: var(--dark);
+    border-style: solid;
+}
+
+td:nth-child(even) {
+    color: var(--accent-dark);
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+h2 {
+    display: inline;
+}
+
+.leaderboard-header {
+    display: flex;
+    padding: 0rem;
+}
+
+.prestige-label {
+    margin-left: auto;
+    text-align: right;
+}
